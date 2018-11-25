@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<TabPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainMenuController">
+  <tabs>
+    <Tab fx:id="contactsTab" closable="false" text="Contacts">
+         <content>
+            <SplitPane dividerPositions="0.9" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                     <children>
+                        <TableView fx:id="contactTable" layoutX="81.0" prefHeight="183.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                              <TableColumn fx:id="idContactColumn" prefWidth="75.0" text="Id" visible="false" />
+                            <TableColumn fx:id="fullnameColumn" prefWidth="75.0" text="Fullname" />
+                            <TableColumn fx:id="firstnameColumn" prefWidth="75.0" text="Firstname" />
+                              <TableColumn fx:id="lastnameColumn" prefWidth="75.0" text="Lastname" />
+                              <TableColumn fx:id="blackColumn" prefWidth="75.0" text="Blacklist" />
+                          </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                     <children>
+                        <Button fx:id="editContact" layoutX="282.0" layoutY="2.0" mnemonicParsing="false" onAction="#editContactAction" text="Edit" AnchorPane.bottomAnchor="4.0" />
+                        <Button fx:id="deleteContact" layoutX="535.0" layoutY="5.0" mnemonicParsing="false" onAction="#deleteContactAction" text="Delete" AnchorPane.bottomAnchor="4.0" AnchorPane.rightAnchor="14.0" />
+                        <Button fx:id="addContact" layoutX="14.0" layoutY="5.0" mnemonicParsing="false" onAction="#addContactAction" text="Add" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="14.0" />
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+         </content>
+    </Tab>
+    <Tab fx:id="phoneTab" closable="false" text="Phones">
+         <content>
+            <SplitPane dividerPositions="0.9" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+              <items>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                     <children>
+                        <TableView fx:id="phoneTable" layoutX="81.0" prefHeight="183.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                           <columns>
+                              <TableColumn fx:id="idPhoneColumn" prefWidth="75.0" text="Id" visible="false" />
+                              <TableColumn fx:id="contactColumn" prefWidth="75.0" text="Fullname" />
+                              <TableColumn fx:id="typeColumn" prefWidth="75.0" text="Phone Type" />
+                              <TableColumn fx:id="phonenumberColumn" prefWidth="75.0" text="Phonenumber" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                     <children>
+                        <Button fx:id="editPhone" layoutX="282.0" layoutY="5.0" mnemonicParsing="false" onAction="#editPhoneAction" text="Edit" AnchorPane.bottomAnchor="4.0" />
+                        <Button fx:id="deletePhone" mnemonicParsing="false" onAction="#deletePhoneAction" text="Delete" AnchorPane.bottomAnchor="4.0" AnchorPane.rightAnchor="14.0" />
+                        <Button fx:id="addPhone" mnemonicParsing="false" onAction="#addPhoneAction" text="Add" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="14.0" />
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+         </content>
+    </Tab>
+      <Tab fx:id="dictTab" text="Phone Type">
+         <content>
+            <SplitPane dividerPositions="0.9" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+              <items>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="199.0" prefWidth="600.0">
+                     <children>
+                        <TableView fx:id="dictTable" layoutY="6.0" prefHeight="0.0" prefWidth="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                           <columns>
+                              <TableColumn fx:id="idColumn" prefWidth="75.0" text="Id" />
+                              <TableColumn fx:id="codeColumn" prefWidth="75.0" text="Code" />
+                              <TableColumn fx:id="typeDictColumn" prefWidth="75.0" text="Type" />
+                              <TableColumn fx:id="numberColumn" prefWidth="75.0" text="Number" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="138.0" prefWidth="600.0">
+                     <children>
+                        <Button fx:id="addDict" layoutX="14.0" layoutY="5.0" mnemonicParsing="false" onAction="#addDictAction" text="Add" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="14.0" />
+                        <Button fx:id="deleteDict" layoutX="534.0" layoutY="5.0" mnemonicParsing="false" onAction="#deleteDictAction" text="Delete" AnchorPane.bottomAnchor="4.0" AnchorPane.rightAnchor="14.0" />
+                        <Button fx:id="editDict" layoutX="282.0" layoutY="5.0" mnemonicParsing="false" onAction="#editDictAction" text="Edit" AnchorPane.bottomAnchor="4.0" />
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+         </content>
+      </Tab>
+  </tabs>
+</TabPane>
